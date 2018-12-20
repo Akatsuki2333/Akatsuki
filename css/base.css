@@ -1,0 +1,84 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+body {
+    font-size: 14px;
+    font-family: "microsoft YaHei","sans-serif";
+    color: #000;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+input,textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    -webkit-appearance: none;
+}
+.clearfix::before,
+.clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear : both;
+}
+[class ^= "icon_"]{
+    background: url(../images/sprites.png) no-repeat;
+    background-size: 200px 200px;
+}
+
+
+/*分类跟购物车头部的公共样式*/
+.topBar {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid #e0e0e0;
+    background: url(../images/header-bg.png) repeat-x;
+    background-size: 1px 44px;
+    position: absolute;
+    z-index: 1000;
+}
+.topBar > .icon_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 20px;
+    background-position: -20px 0;
+    margin: 12px 10px;
+}
+.topBar > .topBar_search {
+    width: 100%;
+    height: 45px;
+    padding: 7px 40px;
+}
+.topBar > .topBar_search > input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+.topBar > .icon_menu {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 12px 10px;
+    background-position: -60px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-clip: content-box;
+    background-origin: content-box;
+}

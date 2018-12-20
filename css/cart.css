@@ -1,0 +1,350 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.topBar {
+    position: static;
+}
+
+.topBar > h2 {
+    text-align: center;
+    line-height: 42px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #000;
+}
+
+.content > .safeBar {
+    background-color: #fff;
+    height: 35px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/*p只有设置 display: inline-block;，宽度才不会占满一整行*/
+.content > .safeBar > .safeTip {
+    display: inline-block;
+    line-height: 34px;
+    position: relative;
+    padding-left: 25px;
+    color: #686868;
+    font-size: 13px;
+}
+
+.content > .safeBar > .safeTip::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(../images/safe_icon.png) no-repeat;
+    background-size: 18px 18px;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/*购物车内容的复选框公共样式*/
+.shop_checkbox {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/shop-icon.png) no-repeat 0 0;
+    background-size: 50px 100px;
+}
+
+.shop_checkbox[checked] {
+    background-position: -25px 0;
+}
+
+/*购物车内容部分开始*/
+.shop {
+    font-family: sans-serif;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.shop > .shop_title {
+    height: 35px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/*因为这里是div要自己占一行，如果没有绝对定位，那么其他内容就会挤下去*/
+.shop > .shop_title > .shop_check {
+    width: 40px;
+    height: 35px;
+    position: absolute;
+}
+
+.shop > .shop_title > .shop_check > .shop_checkbox {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.shop > .shop_title > .store_content {
+    padding-left: 40px;
+    line-height: 35px;
+}
+
+.shop > .shop_title > .store_content > img {
+    display: block;
+    width: 15px;
+    height: 13px;
+    float: left;
+    margin-top: 11px;
+}
+
+.shop > .shop_title > .store_content > .store_name {
+    float: left;
+    margin-left: 3px;
+}
+
+.shop > .shop_title > .store_content > .ex-charge {
+    float: right;
+    margin-right: 5px;
+    color: red;
+    font-size: 12px;
+}
+
+/*购物车具体货物内容开始*/
+.shop_content {
+    padding: 10px 0 10px 40px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+
+    overflow: hidden;
+}
+
+.shop_content > .content_check {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.shop_content > .detail {
+    position: relative;
+    padding-left: 90px;
+}
+
+.shop_content > .detail > .content_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.shop_content > .detail > .content_img > img {
+    display: block;
+    width: 78px;
+    height: 78px;
+
+}
+
+.shop_content > .detail > .detail_title {
+    display: block;
+    height: 30px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.shop_content > .detail > .detail_price {
+    margin-bottom: 8px;
+}
+
+.shop_content > .detail > .change {
+    float: left;
+    text-align: center;
+}
+
+.shop_content > .detail > .change > .change_minus {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.shop_content > .detail > .change > input {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 24px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.shop_content > .detail > .change > .change_plus {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.shop_content > .detail > .del_box {
+    margin-right: 5px;
+    float: right;
+}
+.shop_content > .detail > .del_box > .del_top {
+    display: block;
+    width: 20px;
+    height: 5px;
+    background: url(../images/delete_up.png) no-repeat;
+    background-size: 20px 5px;
+    margin-left: -1px;
+}
+.shop_content > .detail > .del_box > .del_bot {
+    width: 18px;
+    height: 18px;
+    background: url(../images/delete_down.png) no-repeat;
+    background-size: 18px 18px;
+    display: block;
+    margin-top: -3px;
+}
+.amount {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+}
+.amount > .amount_check {
+    width: 60px;
+    height: 57px;
+    line-height: 57px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.amount > .amount_check > .shop_checkbox {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.amount > .amount_check > .choseAll {
+    margin-left: 35px;
+    font-size: 12px;
+}
+.amount > .amount_info {
+    margin-left: 70px;
+
+}
+.amount > .amount_info > .sum{
+    font-size: 18px;
+    line-height: 32px;
+
+}
+
+/*结算*/
+.amount > .amount_submit {
+    width: 116px;
+    height: 57px;
+    line-height: 57px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    text-align: center;
+}
+.amount > .amount_submit > a {
+    font-size: 18px;
+    color: #fff;
+}
+.amount > .amount_submit > a > span {
+    font-size: 12px;
+    color: #fff;
+}
+
+/*弹出框*/
+.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1001;
+    display: none;
+}
+.mask > .mask_box {
+    width: 80%;
+    background-color: #fff;
+    margin: 40% auto;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+
+}
+.mask > .mask_box > .mask_box_con {
+    width: 100%;
+    height: 74px;
+    line-height: 74px;
+    font-size: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+.mask > .mask_box > .mask_box_btn {
+    padding: 10px 20px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+}
+.mask > .mask_box > .mask_box_btn  > .btn_cancel {
+    display: block;
+    width: 45%;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    float: left;
+    margin-right: 10%;
+    border-radius: 4px;
+}
+.mask > .mask_box > .mask_box_btn  > .btn_submit {
+    display: block;
+    width: 45%;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    background-color: red;
+    float: left;
+    border-radius: 4px;
+    color: #fff;
+}
+@keyframes jumpOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+        -webkit-transform: translateY(-2000px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+    }
+    75%{
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(5px);
+        -webkit-transform: translateY(5px);
+    }
+    /*最后清除过渡*/
+    100% {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+    }
+}
+.jumpOut {
+    animation: jumpOut 1s ease;
+}

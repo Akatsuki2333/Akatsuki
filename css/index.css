@@ -1,0 +1,325 @@
+body {
+    background-color: #e0e0e0;
+}
+
+/*最外层盒子，设置最大最小值为多少*/
+.jd_layout {
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+.jd_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 999;
+
+}
+/*头部盒子*/
+.jd_header > .header_box {
+    min-width: 300px;
+    max-width: 640px;
+    height: 40px;
+    background-color: rgba(201, 21, 35, 0.85);
+    padding: 0 55px 0 70px;
+    position: relative;
+    /*flag1*/
+    margin: 0 auto;
+}
+
+/*左边的logo区域*/
+.jd_header > .header_box > .icon_logo {
+    width: 60px;
+    height: 36px;
+    background-position: 0 -103px; /*因为图片已经缩小一半了，所以这里的值也要变为一半*/
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+
+/*中间的搜索框区域*/
+.jd_header > .header_box > .header_search {
+    width: 100%;
+    height: 40px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.jd_header > .header_box > .header_search > .search {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 30px;
+}
+
+.jd_header > .header_box > .header_search > .icon_search {
+    position: absolute;
+    background-position: -60px -109px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 10px;
+
+}
+
+/*右边的登录区域*/
+.jd_header > .header_box > .login {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+}
+
+/*轮播图区域*/
+.jd_banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.jd_banner > .jd_banner_slider {
+    width: 1000%;
+    -webkit-transform:translateX(-10%);
+    transform:translateX(-10%);
+}
+
+/*注意宽度占的百分比都是把父亲当一份来计算的，所以li站的是12.5%*/
+.jd_banner > .jd_banner_slider > li {
+    float: left;
+    width: 10%;
+}
+
+/*注意这里的img一定要加display: block;否则会有间隙*/
+.jd_banner > .jd_banner_slider > li > img {
+    width: 100%;
+    display: block;
+}
+
+/*轮播图处小圆点区域*/
+.jd_banner > .jd_banner_circle {
+    width: 118px;
+    height: 6px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -59px;
+}
+
+.jd_banner > .jd_banner_circle > li {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    float: left;
+    margin-left: 10px;
+}
+
+.jd_banner > .jd_banner_circle > li:first-child {
+    margin-left: 0;
+}
+
+/*导航nav区域*/
+.jd_nav {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #e0e0e0;
+    /* box-shadow: 0 0 6px #f0f0f0; */
+    padding: 0 3.125%;
+    padding-top: 11px;
+    background-color: #fff;
+}
+
+.jd_nav > ul {
+    width: 100%;
+    text-align: center;
+}
+
+.jd_nav > ul > li {
+    float: left;
+    width: 25%;
+
+}
+
+.jd_nav > ul > li > a > img {
+    width: 40px;
+    height: 40px;
+
+}
+
+.jd_nav > ul > li > a > p {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+}
+
+/*商品区域公共样式*/
+.jd_product > .product_box {
+    width: 100%;
+    margin-top: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 1px 1px #e0e0e0;
+}
+
+.jd_product > .product_box > .product_box_top {
+    height: 32px;
+}
+
+.jd_product > .product_box > .product_box_top > h4 {
+    line-height: 32px;
+    font-weight: inherit;
+    position: relative;
+    padding-left: 15px;
+}
+
+.jd_product > .product_box > .product_box_top > h4:before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 12px;
+    background-color: #d8505c;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+}
+
+.jd_product > .product_box > .product_box_top.have_bar {
+    border-bottom: 1px solid #e0e0e0;
+
+}
+
+/*商品区域*/
+.jd_product {
+    width: 100%;
+    padding: 0 5px;
+}
+
+/*秒杀区域*/
+
+.jd_product > .product_box > .product_box_top > .product_secKill > .secKill_icon {
+    display: block;
+    background: url(../images/seckill-icon.png) no-repeat;
+    width: 16px;
+    height: 20px;
+    background-size: 16px 20px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 8px;
+
+}
+
+.jd_product > .product_box > .product_box_top > .product_secKill > .secKill_txt {
+    float: left;
+    margin-left: 8px;
+    color: #d8505c;
+    line-height: 32px;
+
+}
+
+.jd_product > .product_box > .product_box_top > .product_secKill > .secKill_time {
+    float: left;
+    margin-left: 8px;
+
+}
+
+.jd_product > .product_box > .product_box_top > .product_secKill > .secKill_time > .num {
+    display: block;
+    background-color: #666;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-left: 3px;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+}
+
+.jd_product > .product_box > .product_box_top > .product_secKill > .secKill_time > .str {
+    display: block;
+    width: 4px;
+    height: 15px;
+    float: left;
+    line-height: 32px;
+    margin-left: 3px;
+}
+
+.jd_product > .product_box > .product_box_top > .product_more {
+    float: right;
+    line-height: 32px;
+    margin-right: 8px;
+}
+
+/*秒杀区商品部分*/
+.jd_product > .product_box > .product_box_bottom {
+    width: 100%;
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li {
+    float: left;
+    width: 33.33%;
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li > a {
+    display: block;
+    width: 100%;
+
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li > a > img {
+    display: block;
+    width: 64%;
+    margin: 0 18%;
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li p {
+    text-align: center;
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li .new_price {
+    color: #d8505c;
+}
+
+.jd_product > .product_box > .product_box_bottom > ul > li .old_price {
+    text-decoration: line-through;
+    margin: 3px 0;
+}
+
+/*商品底部区域公共样式*/
+.jd_product > .product_box > .pd_buy {
+    width: 100%;
+}
+.jd_product > .product_box > .pd_buy > .border_right {
+    border-right: 1px solid #e0e0e0;
+}
+.jd_product > .product_box > .pd_buy > .border_left {
+    border-left: 1px solid #e0e0e0;
+}
+.jd_product > .product_box > .pd_buy > .border_bottom {
+    border-bottom: 1px solid #e0e0e0;
+}
+.jd_product > .product_box > .pd_buy > .flow_f {
+    width: 50%;
+    float: left;
+}
+.jd_product > .product_box > .pd_buy > .flow_r {
+    width: 50%;
+    float: right;
+}
+
+/*商品下部区域*/
+.jd_product > .product_box > .pd_buy img {
+    /*这里一定要让宽度为100%，否则就会格局就会乱了*/
+    width: 100%;
+    height: 100%;
+    display: block;
+    vertical-align: middle;
+}
